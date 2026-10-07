@@ -1,11 +1,11 @@
 {
   "categories": [
-    { "id": 1, "name": "Reciclaje", "color": "#2E7D32", "icon": "recycling" },
-    { "id": 2, "name": "Energía", "color": "#F9A825", "icon": "bolt" },
-    { "id": 3, "name": "Océanos", "color": "#0277BD", "icon": "waves" },
-    { "id": 4, "name": "Flora", "color": "#43A047", "icon": "eco" },
-    { "id": 5, "name": "Clima", "color": "#5C6BC0", "icon": "thermostat" },
-    { "id": 6, "name": "Consumo", "color": "#EF6C00", "icon": "shopping_bag" }
+    { "id": 1, "name": "Reciclaje", "color": "#2563EB", "icon": "recycling" },
+    { "id": 2, "name": "Energía", "color": "#D97706", "icon": "bolt" },
+    { "id": 3, "name": "Océanos", "color": "#0891B2", "icon": "water_drop" },
+    { "id": 4, "name": "Flora", "color": "#16A34A", "icon": "forest" },
+    { "id": 5, "name": "Clima", "color": "#7C3AED", "icon": "air" },
+    { "id": 6, "name": "Consumo", "color": "#EA580C", "icon": "shopping_bag" }
   ],
   "questions": [
     {
