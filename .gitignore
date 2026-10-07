@@ -36,3 +36,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Config local de herramientas de IA (autogenerada, con rutas de esta máquina)
+.atl/
+
+# Secretos y firmas (nunca al repo)
+.env
+.env.*
+*.jks
+*.keystore
+*.p12
+/android/key.properties
