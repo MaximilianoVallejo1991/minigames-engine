@@ -36,6 +36,10 @@ La estética sale del diseño hecho en Google Stitch (botones 3D tipo arcade, ta
 
 Para otra temática: cambiar `AppColors`, `AppBrand` y los datos.
 
+## Demo web
+
+Cada push a `main` publica la versión web en **https://maximilianovallejo1991.github.io/minigames-engine/** (ver `.github/workflows/deploy-pages.yml`). Para activarlo, una sola vez: *Settings → Pages → Source: GitHub Actions*.
+
 ## Primer arranque
 
 Este repo trae solo el código Dart y los datos. Las carpetas de plataforma (android, ios, web, windows, etc.) se generan con Flutter, que no pisa los archivos existentes:
