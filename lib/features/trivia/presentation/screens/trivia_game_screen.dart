@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/widgets/game_app_bar.dart';
 import '../../domain/trivia_repository.dart';
 import '../controllers/trivia_game_controller.dart';
 import '../widgets/answer_feedback.dart';
 import '../widgets/difficulty_picker.dart';
+import '../widgets/loading_view.dart';
 import '../widgets/question_card.dart';
 import '../widgets/result_view.dart';
 import '../widgets/roulette_view.dart';
-import '../widgets/score_board.dart';
 
 class TriviaGameScreen extends StatefulWidget {
   const TriviaGameScreen({super.key, required this.repository});
@@ -19,12 +20,26 @@ class TriviaGameScreen extends StatefulWidget {
 }
 
 class _TriviaGameScreenState extends State<TriviaGameScreen> {
-  late final TriviaGameController _controller;
+  /// Tiempo extra después de que frena la ruleta, para ver qué salió.
+  static const _landingPause = Duration(milliseconds: 700);
+
+  late TriviaGameController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = TriviaGameController(repository: widget.repository)..start();
+    _controller = _createController();
+  }
+
+  TriviaGameController _createController() => TriviaGameController(
+        repository: widget.repository,
+        revealDelay: RouletteView.spinDuration + _landingPause,
+      )..start();
+
+  void _playAgain() {
+    final old = _controller;
+    setState(() => _controller = _createController());
+    old.dispose();
   }
 
   @override
@@ -35,49 +50,67 @@ class _TriviaGameScreenState extends State<TriviaGameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Trivia')),
-      body: SafeArea(
-        child: Center(
-          // Diseño pensado para celular: en pantallas anchas se centra.
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 480),
-            child: ListenableBuilder(
-              listenable: _controller,
-              builder: (context, _) {
-                final c = _controller;
-                return Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      ScoreBoard(
-                        score: c.score,
-                        maxScore: c.summary.maxScore,
-                        questionNumber: c.roundNumber,
-                        totalQuestions: c.totalQuestions,
-                      ),
-                      const SizedBox(height: 16),
-                      Expanded(child: _buildBody(c)),
-                    ],
-                  ),
-                );
-              },
+    return ListenableBuilder(
+      listenable: _controller,
+      builder: (context, _) {
+        final c = _controller;
+        return Scaffold(
+          extendBodyBehindAppBar: false,
+          appBar: GameAppBar(title: _titleFor(c.phase)),
+          body: SafeArea(
+            top: false,
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 280),
+              switchInCurve: Curves.easeOutCubic,
+              switchOutCurve: Curves.easeInCubic,
+              transitionBuilder: (child, animation) => FadeTransition(
+                opacity: animation,
+                child: SlideTransition(
+                  position: Tween(
+                    begin: const Offset(0, 0.03),
+                    end: Offset.zero,
+                  ).animate(animation),
+                  child: child,
+                ),
+              ),
+              child: KeyedSubtree(
+                key: ValueKey(_phaseKey(c)),
+                child: _buildBody(c),
+              ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
+
+  /// Identifica cada pantalla para animar solo los cambios de paso
+  /// (no cada tic del temporizador).
+  String _phaseKey(TriviaGameController c) {
+    final phase = switch (c.phase) {
+      GamePhase.readyToSpin || GamePhase.spinning => 'roulette',
+      final other => other.name,
+    };
+    return '${identityHashCode(c)}-$phase-${c.roundNumber}';
+  }
+
+  String _titleFor(GamePhase phase) => switch (phase) {
+        GamePhase.loading => 'Trivia',
+        GamePhase.choosingDifficulty => 'Dificultad',
+        GamePhase.readyToSpin || GamePhase.spinning => 'Ruleta',
+        GamePhase.question => 'Pregunta',
+        GamePhase.answered => 'Feedback',
+        GamePhase.finished => 'Resultados',
+      };
 
   Widget _buildBody(TriviaGameController c) {
     switch (c.phase) {
       case GamePhase.loading:
-        return const Center(child: CircularProgressIndicator());
+        return const LoadingView();
       case GamePhase.choosingDifficulty:
         return DifficultyPicker(
-          // Key por ronda para que se reinicie la selección en cada pregunta.
-          key: ValueKey('difficulty-${c.roundNumber}'),
+          questionNumber: c.roundNumber,
+          totalQuestions: c.totalQuestions,
           exhausted: c.exhaustedDifficulties,
           message: c.message,
           onConfirm: c.selectDifficulty,
@@ -88,13 +121,19 @@ class _TriviaGameScreenState extends State<TriviaGameScreen> {
           categories: c.categories,
           difficulty: c.difficulty!,
           isSpinning: c.phase == GamePhase.spinning,
+          result: c.spinResult,
           message: c.message,
+          score: c.score,
+          questionNumber: c.roundNumber,
+          totalQuestions: c.totalQuestions,
           onSpin: c.spin,
         );
       case GamePhase.question:
         return QuestionCard(
           category: c.currentCategory!,
           question: c.currentQuestion!,
+          questionNumber: c.roundNumber,
+          totalQuestions: c.totalQuestions,
           remainingSeconds: c.remainingSeconds,
           totalSeconds: c.totalSeconds,
           onAnswer: c.answer,
@@ -102,8 +141,8 @@ class _TriviaGameScreenState extends State<TriviaGameScreen> {
       case GamePhase.answered:
         return AnswerFeedback(
           round: c.lastRound!,
+          questionNumber: c.roundNumber,
           isLastQuestion: c.isLastQuestion,
-          nextQuestionNumber: c.roundNumber + 1,
           totalQuestions: c.totalQuestions,
           onNext: c.next,
         );
@@ -111,6 +150,7 @@ class _TriviaGameScreenState extends State<TriviaGameScreen> {
         return ResultView(
           summary: c.summary,
           message: c.message,
+          onPlayAgain: _playAgain,
           onExit: () => Navigator.of(context).pop(),
         );
     }

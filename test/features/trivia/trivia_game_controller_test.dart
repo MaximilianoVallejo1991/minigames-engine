@@ -152,4 +152,44 @@ void main() {
       c.dispose();
     });
   });
+
+  group('ruleta', () {
+    test('con revealDelay muestra la categoría antes de arrancar la pregunta', () async {
+      final c = TriviaGameController(
+        repository: FakeTriviaRepository(
+          categories: [category],
+          questions: buildQuestionBank(2),
+        ),
+        revealDelay: const Duration(milliseconds: 20),
+      );
+      await c.start();
+      c.selectDifficulty(Difficulty.easy);
+
+      final spinning = c.spin();
+      // Deja correr el sorteo, pero no la espera de la animación.
+      await Future<void>.delayed(Duration.zero);
+
+      expect(c.phase, GamePhase.spinning);
+      expect(c.spinResult?.id, category.id);
+      expect(c.roundNumber, 1);
+
+      await spinning;
+      expect(c.phase, GamePhase.question);
+      expect(c.spinResult, isNull);
+      expect(c.currentCategory?.id, category.id);
+      expect(c.remainingSeconds, c.totalSeconds);
+      c.dispose();
+    });
+
+    test('sin revealDelay pasa directo a la pregunta', () async {
+      final c = buildController(buildQuestionBank(2));
+      await c.start();
+      c.selectDifficulty(Difficulty.easy);
+      await c.spin();
+
+      expect(c.phase, GamePhase.question);
+      expect(c.spinResult, isNull);
+      c.dispose();
+    });
+  });
 }

@@ -24,6 +24,18 @@ Las reglas están centralizadas en `lib/features/trivia/domain/game_rules.dart`.
 
 Cada pregunta debe tener exactamente una opción correcta.
 
+## Diseño visual: Arcade Neo-Pop
+
+La estética sale del diseño hecho en Google Stitch (botones 3D tipo arcade, tarjetas blancas tipo píldora, verde esmeralda + ámbar).
+
+- `lib/core/theme/app_colors.dart`: paleta (los colores de cada categoría están en `assets/data/trivia.json`).
+- `lib/core/theme/app_text_styles.dart`: tipografía — **Plus Jakarta Sans** (títulos, botones, contadores) e **Inter** (textos). Están embebidas en `assets/fonts/` (licencia OFL), no se descargan en runtime.
+- `lib/core/theme/app_brand.dart`: nombres y textos de marca.
+- `lib/core/widgets/`: componentes base (`ArcadeButton`, `Pressable3D`, `ArcadeCard`, `Pill`, `PillProgressBar`, `GameAppBar`, `GameBody`).
+- El ícono de cada categoría se elige en los datos con el nombre de Material Icons (`recycling`, `bolt`, `water_drop`, …); los disponibles están en `lib/features/trivia/presentation/category_style.dart`.
+
+Para otra temática: cambiar `AppColors`, `AppBrand` y los datos.
+
 ## Primer arranque
 
 Este repo trae solo el código Dart y los datos. Las carpetas de plataforma (android, ios, web, windows, etc.) se generan con Flutter, que no pisa los archivos existentes:
@@ -42,16 +54,17 @@ flutter run
 ```
 assets/
   data/trivia.json        # datos actuales, con forma de tablas (sirven de seed para PostgreSQL)
-  images/  sounds/
+  images/  sounds/  fonts/
 lib/
   main.dart               # ÚNICO lugar donde se elige la fuente de datos
   app.dart                # MaterialApp + tema
   core/
-    theme/                # colores y tipografía de la temática
+    theme/                # colores, tipografía y marca (Arcade Neo-Pop)
     router/               # (reservado para rutas cuando crezca la app)
     widgets/              # widgets compartidos entre juegos
   features/
-    home/                 # selector de minijuegos
+    splash/               # carga inicial
+    home/                 # inicio / selector de minijuegos
     trivia/
       domain/             # modelos, reglas y contrato del repositorio (Dart puro)
       data/               # implementaciones del repositorio + mapeo JSON
@@ -71,8 +84,7 @@ Cada minijuego nuevo es una carpeta hermana dentro de `features/`.
 
 ## Pendientes
 
-- Ruleta animada (`CustomPainter` + `AnimationController`) en lugar de la vista estática actual.
 - Cargar más preguntas: hoy hay 18 (una por categoría y nivel). Con 10 rondas, un mismo nivel se agota a las 6 preguntas y el juego pide elegir otro.
-- Pasar la UI al diseño de Figma (Minijuegos Engine V 1.0): splash, home, colores y tipografía.
+- Sonido (toggle del inicio) y compartir puntaje, que aparecen en el diseño de Stitch.
 - Navegación con go_router.
 - Elegir gestión de estado si crece (Riverpod o provider); por ahora alcanza con `ChangeNotifier`.

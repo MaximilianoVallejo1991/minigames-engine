@@ -26,12 +26,18 @@ class TriviaGameController extends ChangeNotifier {
     required TriviaRepository repository,
     Random? random,
     this.questionTimeLimit = GameRules.questionTimeLimit,
+    this.revealDelay = Duration.zero,
   })  : _repository = repository,
         _random = random ?? Random();
 
   final TriviaRepository _repository;
   final Random _random;
   final Duration questionTimeLimit;
+
+  /// Tiempo entre que se sortea la categoría y empieza la pregunta.
+  /// La UI lo usa para animar la ruleta hasta [spinResult]; el temporizador
+  /// de la pregunta recién arranca después. En tests queda en cero.
+  final Duration revealDelay;
 
   final Set<int> _usedQuestionIds = {};
   final Set<Difficulty> _exhaustedDifficulties = {};
@@ -41,6 +47,7 @@ class TriviaGameController extends ChangeNotifier {
   GamePhase _phase = GamePhase.loading;
   Difficulty? _difficulty;
   TriviaCategory? _currentCategory;
+  TriviaCategory? _spinResult;
   Question? _currentQuestion;
   int _questionNumber = 0;
   int _remainingSeconds = 0;
@@ -52,6 +59,10 @@ class TriviaGameController extends ChangeNotifier {
   List<TriviaCategory> get categories => _categories;
   Difficulty? get difficulty => _difficulty;
   TriviaCategory? get currentCategory => _currentCategory;
+
+  /// Categoría que salió en el giro en curso (solo durante [GamePhase.spinning];
+  /// null mientras se está sorteando).
+  TriviaCategory? get spinResult => _spinResult;
   Question? get currentQuestion => _currentQuestion;
   int get remainingSeconds => _remainingSeconds;
   int get totalSeconds => questionTimeLimit.inSeconds;
@@ -112,6 +123,7 @@ class TriviaGameController extends ChangeNotifier {
     final difficulty = _difficulty;
     if (_phase != GamePhase.readyToSpin || difficulty == null) return;
     _phase = GamePhase.spinning;
+    _spinResult = null;
     _message = null;
     _notify();
 
@@ -128,6 +140,16 @@ class TriviaGameController extends ChangeNotifier {
 
         final question = available[_random.nextInt(available.length)];
         _usedQuestionIds.add(question.id);
+
+        if (revealDelay > Duration.zero) {
+          // La ruleta anima hasta la categoría; la pregunta espera.
+          _spinResult = category;
+          _notify();
+          await Future<void>.delayed(revealDelay);
+          if (_disposed) return;
+        }
+
+        _spinResult = null;
         _currentCategory = category;
         _currentQuestion = question;
         _questionNumber++;

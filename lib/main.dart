@@ -10,5 +10,5 @@ void main() {
   // Al migrar a PostgreSQL: reemplazar por RemoteTriviaRepository(...).
   final triviaRepository = LocalTriviaRepository();
 
-  runApp(MinigamesApp(triviaRepository: triviaRepository));
+  runApp(MinigamesApp(triviaRepository: triviaRepository, showSplash: true));
 }
