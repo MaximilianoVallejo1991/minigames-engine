@@ -1,0 +1,23 @@
+name: minigames_engine
+description: Motor de minijuegos didácticos. MVP - trivia con ruleta (temática medioambiente, adaptable a cualquier tema cambiando los datos).
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/
+    - assets/images/
+    - assets/sounds/

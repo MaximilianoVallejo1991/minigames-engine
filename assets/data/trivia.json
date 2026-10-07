@@ -1,0 +1,192 @@
+{
+  "categories": [
+    { "id": 1, "name": "Reciclaje", "color": "#2E7D32", "icon": "recycling" },
+    { "id": 2, "name": "Energía", "color": "#F9A825", "icon": "bolt" },
+    { "id": 3, "name": "Océanos", "color": "#0277BD", "icon": "waves" },
+    { "id": 4, "name": "Flora", "color": "#43A047", "icon": "eco" },
+    { "id": 5, "name": "Clima", "color": "#5C6BC0", "icon": "thermostat" },
+    { "id": 6, "name": "Consumo", "color": "#EF6C00", "icon": "shopping_bag" }
+  ],
+  "questions": [
+    {
+      "id": 1, "categoryId": 1, "difficulty": "easy", "image": null,
+      "text": "¿Cuál de estos materiales se puede reciclar indefinidamente sin perder calidad?",
+      "explanation": "El vidrio puede fundirse y volver a moldearse una y otra vez sin perder sus propiedades.",
+      "options": [
+        { "id": 1, "text": "Vidrio", "isCorrect": true },
+        { "id": 2, "text": "Papel", "isCorrect": false },
+        { "id": 3, "text": "Telgopor", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 2, "categoryId": 1, "difficulty": "medium", "image": null,
+      "text": "¿Qué indica el símbolo de las tres flechas en círculo en un envase?",
+      "explanation": "El anillo de Möbius indica que el envase es reciclable o que contiene material reciclado. No significa que sea biodegradable.",
+      "options": [
+        { "id": 4, "text": "Que es biodegradable", "isCorrect": false },
+        { "id": 5, "text": "Que es reciclable o contiene material reciclado", "isCorrect": true },
+        { "id": 6, "text": "Que es tóxico", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 3, "categoryId": 1, "difficulty": "hard", "image": null,
+      "text": "¿Qué número identifica al PET en el código de reciclado de los plásticos?",
+      "explanation": "El PET, usado en botellas de bebidas, lleva el número 1 dentro del triángulo de flechas.",
+      "options": [
+        { "id": 7, "text": "1", "isCorrect": true },
+        { "id": 8, "text": "4", "isCorrect": false },
+        { "id": 9, "text": "6", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 4, "categoryId": 2, "difficulty": "easy", "image": null,
+      "text": "¿Cuál de estas es una fuente de energía renovable?",
+      "explanation": "La energía solar se renueva todos los días; el carbón y el petróleo tardan millones de años en formarse.",
+      "options": [
+        { "id": 10, "text": "Carbón", "isCorrect": false },
+        { "id": 11, "text": "Petróleo", "isCorrect": false },
+        { "id": 12, "text": "Solar", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 5, "categoryId": 2, "difficulty": "medium", "image": null,
+      "text": "¿Qué tipo de lámpara consume menos energía para dar la misma luz?",
+      "explanation": "Una lámpara LED consume alrededor de un 80 % menos que una incandescente y dura muchas más horas.",
+      "options": [
+        { "id": 13, "text": "Incandescente", "isCorrect": false },
+        { "id": 14, "text": "LED", "isCorrect": true },
+        { "id": 15, "text": "Halógena", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 6, "categoryId": 2, "difficulty": "hard", "image": null,
+      "text": "¿Qué aprovecha la energía geotérmica?",
+      "explanation": "La geotermia usa el calor del interior de la Tierra para generar electricidad o calefacción.",
+      "options": [
+        { "id": 16, "text": "El calor interno de la Tierra", "isCorrect": true },
+        { "id": 17, "text": "El movimiento de las mareas", "isCorrect": false },
+        { "id": 18, "text": "La fuerza del viento", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 7, "categoryId": 3, "difficulty": "easy", "image": null,
+      "text": "¿Qué parte de la superficie de la Tierra cubren los océanos?",
+      "explanation": "Los océanos cubren cerca del 71 % del planeta y producen buena parte del oxígeno que respiramos.",
+      "options": [
+        { "id": 19, "text": "Cerca del 30 %", "isCorrect": false },
+        { "id": 20, "text": "Cerca del 50 %", "isCorrect": false },
+        { "id": 21, "text": "Cerca del 71 %", "isCorrect": true }
+      ]
+    },
+    {
+      "id": 8, "categoryId": 3, "difficulty": "medium", "image": null,
+      "text": "¿Cuánto tiempo tarda aproximadamente una botella de plástico en degradarse en la naturaleza?",
+      "explanation": "Una botella de plástico tarda alrededor de 450 años y, en lugar de desaparecer, se fragmenta en microplásticos.",
+      "options": [
+        { "id": 22, "text": "Entre 10 y 20 años", "isCorrect": false },
+        { "id": 23, "text": "Alrededor de 450 a 500 años", "isCorrect": true },
+        { "id": 24, "text": "Menos de 6 meses gracias al sol", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 9, "categoryId": 3, "difficulty": "hard", "image": null,
+      "text": "¿Qué son los microplásticos?",
+      "explanation": "Son fragmentos de plástico de menos de 5 mm. Llegan al mar y terminan en la cadena alimentaria.",
+      "options": [
+        { "id": 25, "text": "Plásticos biodegradables", "isCorrect": false },
+        { "id": 26, "text": "Fragmentos de plástico de menos de 5 mm", "isCorrect": true },
+        { "id": 27, "text": "Bacterias que comen plástico", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 10, "categoryId": 4, "difficulty": "easy", "image": null,
+      "text": "¿Qué gas liberan las plantas durante la fotosíntesis?",
+      "explanation": "Las plantas absorben dióxido de carbono y liberan oxígeno al producir su alimento con la luz del sol.",
+      "options": [
+        { "id": 28, "text": "Oxígeno", "isCorrect": true },
+        { "id": 29, "text": "Dióxido de carbono", "isCorrect": false },
+        { "id": 30, "text": "Metano", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 11, "categoryId": 4, "difficulty": "medium", "image": null,
+      "text": "¿Qué animal es clave para la polinización de muchas plantas y cultivos?",
+      "explanation": "Las abejas transportan polen de flor en flor y hacen posible gran parte de los alimentos que comemos.",
+      "options": [
+        { "id": 31, "text": "La abeja", "isCorrect": true },
+        { "id": 32, "text": "El mosquito", "isCorrect": false },
+        { "id": 33, "text": "La cucaracha", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 12, "categoryId": 4, "difficulty": "hard", "image": null,
+      "text": "¿Cuál es la selva tropical más grande del mundo?",
+      "explanation": "La Amazonía se extiende por nueve países de Sudamérica y alberga una enorme diversidad de especies.",
+      "options": [
+        { "id": 34, "text": "La selva del Congo", "isCorrect": false },
+        { "id": 35, "text": "La Amazonía", "isCorrect": true },
+        { "id": 36, "text": "La selva de Daintree", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 13, "categoryId": 5, "difficulty": "easy", "image": null,
+      "text": "¿Qué gas es el principal responsable del efecto invernadero causado por el ser humano?",
+      "explanation": "El dióxido de carbono se libera sobre todo al quemar combustibles fósiles como el carbón, el petróleo y el gas.",
+      "options": [
+        { "id": 37, "text": "Oxígeno", "isCorrect": false },
+        { "id": 38, "text": "Dióxido de carbono", "isCorrect": true },
+        { "id": 39, "text": "Helio", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 14, "categoryId": 5, "difficulty": "medium", "image": null,
+      "text": "¿Cuál es el objetivo central del Acuerdo de París sobre el clima?",
+      "explanation": "Busca que el aumento de la temperatura global quede muy por debajo de 2 °C, procurando no superar 1,5 °C.",
+      "options": [
+        { "id": 40, "text": "Prohibir los autos a combustión", "isCorrect": false },
+        { "id": 41, "text": "Limitar el aumento de la temperatura global", "isCorrect": true },
+        { "id": 42, "text": "Plantar un árbol por habitante", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 15, "categoryId": 5, "difficulty": "hard", "image": null,
+      "text": "¿Qué gas de efecto invernadero, liberado en gran parte por la ganadería, calienta mucho más que el CO₂ por molécula?",
+      "explanation": "El metano retiene mucho más calor que el dióxido de carbono, aunque permanece menos tiempo en la atmósfera.",
+      "options": [
+        { "id": 43, "text": "Metano", "isCorrect": true },
+        { "id": 44, "text": "Argón", "isCorrect": false },
+        { "id": 45, "text": "Hidrógeno", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 16, "categoryId": 6, "difficulty": "easy", "image": null,
+      "text": "¿Qué conviene llevar al supermercado?",
+      "explanation": "Una bolsa reutilizable reemplaza cientos de bolsas plásticas de un solo uso.",
+      "options": [
+        { "id": 46, "text": "Una bolsa reutilizable", "isCorrect": true },
+        { "id": 47, "text": "Pedir bolsas plásticas nuevas", "isCorrect": false },
+        { "id": 48, "text": "Una bolsa nueva por cada producto", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 17, "categoryId": 6, "difficulty": "medium", "image": null,
+      "text": "¿Qué propone la economía circular?",
+      "explanation": "Reutilizar, reparar y reciclar para que los materiales sigan en uso en lugar de convertirse en basura.",
+      "options": [
+        { "id": 49, "text": "Producir más rápido y más barato", "isCorrect": false },
+        { "id": 50, "text": "Mantener los materiales en uso el mayor tiempo posible", "isCorrect": true },
+        { "id": 51, "text": "Comprar solo productos importados", "isCorrect": false }
+      ]
+    },
+    {
+      "id": 18, "categoryId": 6, "difficulty": "hard", "image": null,
+      "text": "¿Qué mide la huella hídrica de un producto?",
+      "explanation": "Mide toda el agua dulce usada para producirlo, incluida la de las materias primas y la fabricación.",
+      "options": [
+        { "id": 52, "text": "El agua que contiene el producto", "isCorrect": false },
+        { "id": 53, "text": "El agua dulce usada en toda su producción", "isCorrect": true },
+        { "id": 54, "text": "El agua necesaria para reciclarlo", "isCorrect": false }
+      ]
+    }
+  ]
+}
