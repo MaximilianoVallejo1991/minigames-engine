@@ -2,6 +2,50 @@
 
 Motor de minijuegos didácticos en Flutter. El primer juego es una **trivia con ruleta** con temática de medioambiente, pensada para servir a cualquier temática cambiando solo los datos (`assets/data/`) y los assets visuales.
 
+## Decisiones técnicas
+
+- **Flutter multiplataforma** (Android, iOS, web, Windows, Linux, macOS). El MVP se valida principalmente en web (GitHub Pages) y Windows.
+- **Arquitectura por capas dentro de cada feature**: `domain/` (modelos, reglas, contrato de repositorio en Dart puro, sin Flutter) → `data/` (implementación concreta del repositorio) → `presentation/` (controlador + pantallas + widgets). El objetivo es poder cambiar la fuente de datos sin tocar UI ni reglas de juego.
+- **Patrón Repository para los datos**, pensado de entrada para migrar a un backend propio:
+  - `TriviaRepository` es la interfaz (`lib/features/trivia/domain/trivia_repository.dart`).
+  - `LocalTriviaRepository` es la única implementación hoy: lee `assets/data/trivia.json` empaquetado en el binario.
+  - `lib/main.dart` es el único lugar donde se elige la implementación. El día que exista una API, se agrega `RemoteTriviaRepository` y se cambia una línea ahí.
+  - **La app nunca se conecta directo a una base de datos** (ni ahora ni en el plan a futuro): siempre va a haber una API en el medio para no exponer credenciales dentro del binario cliente.
+- **Gestión de estado**: `ChangeNotifier` simple (`TriviaGameController`), sin librería externa. Es una decisión deliberada para el tamaño actual del proyecto, no un olvido — ver "Pendientes" para cuándo reconsiderarlo.
+- **Navegación**: `Navigator` imperativo (`MaterialPageRoute`, `pushReplacement`). `go_router` está declarado en `pubspec.yaml` y la carpeta `lib/core/router/` está reservada, pero **todavía no se usa en ningún lado** — es deuda pendiente, no una capa activa.
+- **Tipografías embebidas** (Plus Jakarta Sans + Inter, licencia OFL) en `assets/fonts/`, no se descargan en runtime. Elegido para que el look Arcade Neo-Pop no dependa de Google Fonts ni de conexión.
+- **Datos con forma de tablas** (`categories`, `questions` con `categoryId` como foránea) aunque hoy viajen en un JSON de assets — así el mismo archivo sirve de seed el día que haya una base real detrás de la API.
+
+## Qué se sube al repo
+
+Está versionado el proyecto Flutter completo, incluidas las carpetas de plataforma (`android/`, `ios/`, `web/`, `windows/`, `linux/`, `macos/`) generadas por `flutter create`. No quedan afuera ni se regeneran a mano.
+
+Lo que **no** se sube (`.gitignore`):
+
+- Artefactos de build y cachés de herramientas: `build/`, `.dart_tool/`, `.pub-cache/`, `coverage/`.
+- Configuración local de IDE: `.idea/`, `.vscode/`, `*.iml`.
+- Config local de herramientas de IA (`.atl/`), específica de cada máquina.
+- Secretos y material de firma: `.env`, `.env.*`, `*.jks`, `*.keystore`, `*.p12`, `android/key.properties`.
+
+## Primer arranque
+
+```bash
+flutter pub get
+flutter test
+flutter run
+```
+
+No hace falta `flutter create`: las carpetas de plataforma ya están en el repo.
+
+## Pantalla de carga: qué resuelve cada pieza
+
+Hay dos capas distintas, que no hay que confundir:
+
+1. **Loader HTML/CSS puro, pre-engine** (`web/index.html`, `#app-loader` + `web/flutter_bootstrap.js`). Se pinta apenas el navegador parsea el `body` — sin esperar a ningún JS ni al engine de Flutter — y cubre el hueco en blanco real: el tiempo de descarga del engine/CanvasKit y los assets iniciales. `flutter_bootstrap.js` sobreescribe el que genera `flutter build web` para escuchar el evento `flutter-first-frame` (lo dispara el engine cuando pinta su primer frame) y recién ahí hacer fade-out y sacar el loader del DOM. Está implementado y cubre exactamente ese gap.
+2. **`SplashScreen` de Flutter** (`lib/features/splash/splash_screen.dart`), mostrado desde `app.dart` antes del `HomeScreen`. Es el primer frame que pinta Flutter, así que el loader HTML se retira justo cuando este splash ya está en pantalla — sin que se note un salto ni se superpongan los dos. Pero sigue siendo **una animación con duración fija** (2200 ms), no un gate sobre carga real: no espera a `LocalTriviaRepository.getCategories()` (esa carga la dispara `HomeScreen` por su cuenta con un `FutureBuilder`, y si no resolvió todavía simplemente no muestra la tarjeta de categorías). Queda igual que antes — es una mejora aparte, no parte de este fix.
+
+En criollo: el hueco en blanco real (antes de que exista cualquier widget de Flutter) ya está tapado. Lo que sigue pendiente es que el splash de Flutter deje de ser un timer fijo y pase a esperar carga real — ver "Pendientes".
+
 ## Reglas de la trivia
 
 Cada partida tiene **10 preguntas**. Cada ronda sigue estos pasos:
@@ -38,49 +82,37 @@ Para otra temática: cambiar `AppColors`, `AppBrand` y los datos.
 
 ## Demo web
 
-Cada push a `main` publica la versión web en **https://maximilianovallejo1991.github.io/minigames-engine/** (ver `.github/workflows/deploy-pages.yml`). Para activarlo, una sola vez: *Settings → Pages → Source: GitHub Actions*.
-
-## Primer arranque
-
-Este repo trae solo el código Dart y los datos. Las carpetas de plataforma (android, ios, web, windows, etc.) se generan con Flutter, que no pisa los archivos existentes:
-
-```bash
-flutter create . --project-name minigames_engine --org com.tuusuario
-flutter pub get
-flutter test
-flutter run
-```
-
-> El `--project-name` es necesario porque el nombre de la carpeta tiene un guion y Dart no lo acepta como nombre de paquete.
+Cada push a `main` publica la versión web en **https://maximilianovallejo1991.github.io/minigames-engine/** (ver `.github/workflows/deploy-pages.yml`). Requiere, una sola vez: *Settings → Pages → Source: GitHub Actions*.
 
 ## Estructura
 
 ```
 assets/
-  data/trivia.json        # datos actuales, con forma de tablas (sirven de seed para PostgreSQL)
+  data/trivia.json        # datos actuales, con forma de tablas (sirven de seed para un backend futuro)
   images/  sounds/  fonts/
 lib/
-  main.dart               # ÚNICO lugar donde se elige la fuente de datos
-  app.dart                # MaterialApp + tema
+  main.dart               # ÚNICO lugar donde se elige la fuente de datos (repositorio)
+  app.dart                # MaterialApp + tema + arranque del splash
   core/
     theme/                # colores, tipografía y marca (Arcade Neo-Pop)
-    router/               # (reservado para rutas cuando crezca la app)
+    router/               # reservado para go_router; sin uso todavía
     widgets/              # widgets compartidos entre juegos
   features/
-    splash/               # carga inicial
+    splash/               # intro animada de duración fija (ver limitaciones arriba)
     home/                 # inicio / selector de minijuegos
     trivia/
       domain/             # modelos, reglas y contrato del repositorio (Dart puro)
-      data/               # implementaciones del repositorio + mapeo JSON
+      data/                # implementaciones del repositorio + mapeo JSON
       presentation/       # controlador de partida, pantallas y widgets
 test/                     # espejo de lib/
+android/ ios/ web/ windows/ linux/ macos/   # carpetas de plataforma, generadas por Flutter y versionadas
 ```
 
 Cada minijuego nuevo es una carpeta hermana dentro de `features/`.
 
-## Migración a PostgreSQL (más adelante)
+## Migración a un backend propio (más adelante)
 
-1. Crear una API (Node/Express, Dart Frog/Serverpod o Supabase) delante de la base. **La app nunca se conecta directo a PostgreSQL**: las credenciales quedarían dentro del binario.
+1. Crear una API (Node/Express, Dart Frog/Serverpod o Supabase) delante de la base. **La app nunca se conecta directo a la base**: las credenciales quedarían dentro del binario.
 2. Usar `assets/data/trivia.json` como seed: `categories`, `questions` y `options` ya tienen `id` y claves foráneas (`categoryId`).
 3. Agregar `lib/features/trivia/data/remote_trivia_repository.dart` implementando `TriviaRepository`.
 4. Cambiar la instancia en `main.dart`. Pantallas y controlador no se tocan.
@@ -88,7 +120,8 @@ Cada minijuego nuevo es una carpeta hermana dentro de `features/`.
 
 ## Pendientes
 
+- Atar el `SplashScreen` de Flutter a carga real (hoy es un timer fijo de 2200 ms) en vez de a `AnimationController.forward()` — ver sección "Pantalla de carga" arriba.
 - Cargar más preguntas: hoy hay 18 (una por categoría y nivel). Con 10 rondas, un mismo nivel se agota a las 6 preguntas y el juego pide elegir otro.
 - Sonido (toggle del inicio) y compartir puntaje, que aparecen en el diseño de Stitch.
-- Navegación con go_router.
-- Elegir gestión de estado si crece (Riverpod o provider); por ahora alcanza con `ChangeNotifier`.
+- Activar la navegación con `go_router` (hoy declarada pero sin uso) o retirarla si no se va a usar.
+- Elegir gestión de estado si el proyecto crece (Riverpod o provider); por ahora alcanza con `ChangeNotifier`.
