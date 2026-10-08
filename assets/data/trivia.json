@@ -1,191 +1,2261 @@
 {
   "categories": [
-    { "id": 1, "name": "Reciclaje", "color": "#2563EB", "icon": "recycling" },
-    { "id": 2, "name": "Energía", "color": "#D97706", "icon": "bolt" },
-    { "id": 3, "name": "Océanos", "color": "#0891B2", "icon": "water_drop" },
-    { "id": 4, "name": "Flora", "color": "#16A34A", "icon": "forest" },
-    { "id": 5, "name": "Clima", "color": "#7C3AED", "icon": "air" },
-    { "id": 6, "name": "Consumo", "color": "#EA580C", "icon": "shopping_bag" }
+    { "id": 1, "name": "Las 3R", "color": "#2563EB", "icon": "recycling" },
+    { "id": 2, "name": "Separación", "color": "#D97706", "icon": "bolt" },
+    { "id": 3, "name": "Economía circular", "color": "#0891B2", "icon": "water_drop" },
+    { "id": 4, "name": "Papel y cartón", "color": "#16A34A", "icon": "forest" },
+    { "id": 5, "name": "Plástico y vidrio", "color": "#7C3AED", "icon": "air" },
+    { "id": 6, "name": "Residuos especiales", "color": "#EA580C", "icon": "shopping_bag" }
   ],
   "questions": [
     {
-      "id": 1, "categoryId": 1, "difficulty": "easy", "image": null,
-      "text": "¿Cuál de estos materiales se puede reciclar indefinidamente sin perder calidad?",
-      "explanation": "El vidrio puede fundirse y volver a moldearse una y otra vez sin perder sus propiedades.",
+      "id": 1,
+      "categoryId": 1,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué significa reciclar?",
+      "explanation": "Reciclar implica transformar el material para fabricar algo nuevo. Usar un objeto tal como está es reutilizar, y comprar menos es reducir.",
       "options": [
-        { "id": 1, "text": "Vidrio", "isCorrect": true },
-        { "id": 2, "text": "Papel", "isCorrect": false },
-        { "id": 3, "text": "Telgopor", "isCorrect": false }
+        {
+          "id": 1,
+          "text": "Volver a usar un objeto tal como está",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "text": "Transformar materiales usados para volver a aprovecharlos",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "text": "Comprar menos productos",
+          "isCorrect": false
+        }
       ]
     },
     {
-      "id": 2, "categoryId": 1, "difficulty": "medium", "image": null,
-      "text": "¿Qué indica el símbolo de las tres flechas en círculo en un envase?",
-      "explanation": "El anillo de Möbius indica que el envase es reciclable o que contiene material reciclado. No significa que sea biodegradable.",
+      "id": 2,
+      "categoryId": 1,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué significa reutilizar?",
+      "explanation": "Reutilizar es darle otro uso a un objeto sin transformarlo, como usar un frasco vacío para guardar cosas.",
       "options": [
-        { "id": 4, "text": "Que es biodegradable", "isCorrect": false },
-        { "id": 5, "text": "Que es reciclable o contiene material reciclado", "isCorrect": true },
-        { "id": 6, "text": "Que es tóxico", "isCorrect": false }
+        {
+          "id": 4,
+          "text": "Separar un objeto para que lo recolecten",
+          "isCorrect": false
+        },
+        {
+          "id": 5,
+          "text": "Transformar un objeto en materia prima nueva",
+          "isCorrect": false
+        },
+        {
+          "id": 6,
+          "text": "Volver a usar un objeto",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 3, "categoryId": 1, "difficulty": "hard", "image": null,
-      "text": "¿Qué número identifica al PET en el código de reciclado de los plásticos?",
-      "explanation": "El PET, usado en botellas de bebidas, lleva el número 1 dentro del triángulo de flechas.",
+      "id": 3,
+      "categoryId": 1,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué significa reducir?",
+      "explanation": "Reducir es evitar que el residuo se genere. Aplastar una botella no la reduce: solo ocupa menos espacio.",
       "options": [
-        { "id": 7, "text": "1", "isCorrect": true },
-        { "id": 8, "text": "4", "isCorrect": false },
-        { "id": 9, "text": "6", "isCorrect": false }
+        {
+          "id": 7,
+          "text": "Aplastar los residuos para que ocupen menos lugar",
+          "isCorrect": false
+        },
+        {
+          "id": 8,
+          "text": "Separar los residuos por material",
+          "isCorrect": false
+        },
+        {
+          "id": 9,
+          "text": "Generar menos residuos",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 4, "categoryId": 2, "difficulty": "easy", "image": null,
-      "text": "¿Cuál de estas es una fuente de energía renovable?",
-      "explanation": "La energía solar se renueva todos los días; el carbón y el petróleo tardan millones de años en formarse.",
+      "id": 4,
+      "categoryId": 1,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál es la regla de las 3R?",
+      "explanation": "Primero generar menos, después darle otro uso a lo que tenemos y, cuando ya no se pueda, reciclar.",
       "options": [
-        { "id": 10, "text": "Carbón", "isCorrect": false },
-        { "id": 11, "text": "Petróleo", "isCorrect": false },
-        { "id": 12, "text": "Solar", "isCorrect": true }
+        {
+          "id": 10,
+          "text": "Recoger, Reutilizar y Reciclar",
+          "isCorrect": false
+        },
+        {
+          "id": 11,
+          "text": "Reducir, Reparar y Recolectar",
+          "isCorrect": false
+        },
+        {
+          "id": 12,
+          "text": "Reducir, Reutilizar y Reciclar",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 5, "categoryId": 2, "difficulty": "medium", "image": null,
-      "text": "¿Qué tipo de lámpara consume menos energía para dar la misma luz?",
-      "explanation": "Una lámpara LED consume alrededor de un 80 % menos que una incandescente y dura muchas más horas.",
+      "id": 5,
+      "categoryId": 1,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué podemos hacer antes de comprar un producto para generar menos residuos?",
+      "explanation": "Evitar compras innecesarias es la forma más directa de no generar residuos.",
       "options": [
-        { "id": 13, "text": "Incandescente", "isCorrect": false },
-        { "id": 14, "text": "LED", "isCorrect": true },
-        { "id": 15, "text": "Halógena", "isCorrect": false }
+        {
+          "id": 13,
+          "text": "Elegir la presentación individual, que es más práctica",
+          "isCorrect": false
+        },
+        {
+          "id": 14,
+          "text": "Preguntarnos si realmente lo necesitamos",
+          "isCorrect": true
+        },
+        {
+          "id": 15,
+          "text": "Llevar varias unidades para aprovechar la oferta",
+          "isCorrect": false
+        }
       ]
     },
     {
-      "id": 6, "categoryId": 2, "difficulty": "hard", "image": null,
-      "text": "¿Qué aprovecha la energía geotérmica?",
-      "explanation": "La geotermia usa el calor del interior de la Tierra para generar electricidad o calefacción.",
+      "id": 6,
+      "categoryId": 1,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué ayuda a disminuir la cantidad de residuos?",
+      "explanation": "Reutilizar evita que un objeto se convierta en residuo. Compactar o cambiar el material de un descartable no disminuye la cantidad.",
       "options": [
-        { "id": 16, "text": "El calor interno de la Tierra", "isCorrect": true },
-        { "id": 17, "text": "El movimiento de las mareas", "isCorrect": false },
-        { "id": 18, "text": "La fuerza del viento", "isCorrect": false }
+        {
+          "id": 16,
+          "text": "Reutilizar productos",
+          "isCorrect": true
+        },
+        {
+          "id": 17,
+          "text": "Compactar la basura antes de sacarla",
+          "isCorrect": false
+        },
+        {
+          "id": 18,
+          "text": "Usar vasos descartables de cartón en lugar de plástico",
+          "isCorrect": false
+        }
       ]
     },
     {
-      "id": 7, "categoryId": 3, "difficulty": "easy", "image": null,
-      "text": "¿Qué parte de la superficie de la Tierra cubren los océanos?",
-      "explanation": "Los océanos cubren cerca del 71 % del planeta y producen buena parte del oxígeno que respiramos.",
+      "id": 7,
+      "categoryId": 1,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué es un residuo?",
+      "explanation": "Lo que define a un residuo es que alguien lo descarta. Muchos residuos todavía tienen valor y pueden recuperarse.",
       "options": [
-        { "id": 19, "text": "Cerca del 30 %", "isCorrect": false },
-        { "id": 20, "text": "Cerca del 50 %", "isCorrect": false },
-        { "id": 21, "text": "Cerca del 71 %", "isCorrect": true }
+        {
+          "id": 19,
+          "text": "Solo los restos de comida y la basura orgánica",
+          "isCorrect": false
+        },
+        {
+          "id": 20,
+          "text": "Solo los objetos que ya no sirven para nada",
+          "isCorrect": false
+        },
+        {
+          "id": 21,
+          "text": "Un material u objeto que su dueño descarta o piensa descartar",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 8, "categoryId": 3, "difficulty": "medium", "image": null,
-      "text": "¿Cuánto tiempo tarda aproximadamente una botella de plástico en degradarse en la naturaleza?",
-      "explanation": "Una botella de plástico tarda alrededor de 450 años y, en lugar de desaparecer, se fragmenta en microplásticos.",
+      "id": 8,
+      "categoryId": 1,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué ventaja tiene reutilizar un producto antes de reciclarlo?",
+      "explanation": "Reutilizar mantiene el objeto en uso sin gastar recursos en transformarlo. Por eso va antes que reciclar.",
       "options": [
-        { "id": 22, "text": "Entre 10 y 20 años", "isCorrect": false },
-        { "id": 23, "text": "Alrededor de 450 a 500 años", "isCorrect": true },
-        { "id": 24, "text": "Menos de 6 meses gracias al sol", "isCorrect": false }
+        {
+          "id": 22,
+          "text": "Se obtiene un material reciclado de mejor calidad",
+          "isCorrect": false
+        },
+        {
+          "id": 23,
+          "text": "Ya no hace falta separarlo después",
+          "isCorrect": false
+        },
+        {
+          "id": 24,
+          "text": "Se prolonga su vida útil",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 9, "categoryId": 3, "difficulty": "hard", "image": null,
-      "text": "¿Qué son los microplásticos?",
-      "explanation": "Son fragmentos de plástico de menos de 5 mm. Llegan al mar y terminan en la cadena alimentaria.",
+      "id": 9,
+      "categoryId": 1,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué principio busca evitar que se generen residuos desde el comienzo?",
+      "explanation": "Reciclar y valorizar actúan cuando el residuo ya existe. Prevenir y reducir evitan que exista.",
       "options": [
-        { "id": 25, "text": "Plásticos biodegradables", "isCorrect": false },
-        { "id": 26, "text": "Fragmentos de plástico de menos de 5 mm", "isCorrect": true },
-        { "id": 27, "text": "Bacterias que comen plástico", "isCorrect": false }
+        {
+          "id": 25,
+          "text": "Reciclaje",
+          "isCorrect": false
+        },
+        {
+          "id": 26,
+          "text": "Valorización",
+          "isCorrect": false
+        },
+        {
+          "id": 27,
+          "text": "Prevención y reducción",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 10, "categoryId": 4, "difficulty": "easy", "image": null,
-      "text": "¿Qué gas liberan las plantas durante la fotosíntesis?",
-      "explanation": "Las plantas absorben dióxido de carbono y liberan oxígeno al producir su alimento con la luz del sol.",
+      "id": 10,
+      "categoryId": 1,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué relación hay entre el consumo responsable y el reciclaje?",
+      "explanation": "Se complementan: el consumo responsable actúa antes de que exista el residuo y el reciclaje, después.",
       "options": [
-        { "id": 28, "text": "Oxígeno", "isCorrect": true },
-        { "id": 29, "text": "Dióxido de carbono", "isCorrect": false },
-        { "id": 30, "text": "Metano", "isCorrect": false }
+        {
+          "id": 28,
+          "text": "Si se recicla todo, no hace falta consumir responsablemente",
+          "isCorrect": false
+        },
+        {
+          "id": 29,
+          "text": "Ambos ayudan a reducir el impacto ambiental de lo que consumimos",
+          "isCorrect": true
+        },
+        {
+          "id": 30,
+          "text": "Son lo mismo con distinto nombre",
+          "isCorrect": false
+        }
       ]
     },
     {
-      "id": 11, "categoryId": 4, "difficulty": "medium", "image": null,
-      "text": "¿Qué animal es clave para la polinización de muchas plantas y cultivos?",
-      "explanation": "Las abejas transportan polen de flor en flor y hacen posible gran parte de los alimentos que comemos.",
+      "id": 11,
+      "categoryId": 1,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué diferencia hay entre reciclar y reutilizar?",
+      "explanation": "Al reutilizar, el objeto sigue siendo el mismo. Al reciclar, el material se transforma para fabricar algo nuevo.",
       "options": [
-        { "id": 31, "text": "La abeja", "isCorrect": true },
-        { "id": 32, "text": "El mosquito", "isCorrect": false },
-        { "id": 33, "text": "La cucaracha", "isCorrect": false }
+        {
+          "id": 31,
+          "text": "Reutilizar mantiene el producto para otro uso; reciclar transforma sus materiales para recuperarlos",
+          "isCorrect": true
+        },
+        {
+          "id": 32,
+          "text": "Reciclar mantiene el producto para otro uso; reutilizar transforma sus materiales para recuperarlos",
+          "isCorrect": false
+        },
+        {
+          "id": 33,
+          "text": "Reutilizar solo se aplica a envases; reciclar, a cualquier objeto",
+          "isCorrect": false
+        }
       ]
     },
     {
-      "id": 12, "categoryId": 4, "difficulty": "hard", "image": null,
-      "text": "¿Cuál es la selva tropical más grande del mundo?",
-      "explanation": "La Amazonía se extiende por nueve países de Sudamérica y alberga una enorme diversidad de especies.",
+      "id": 12,
+      "categoryId": 1,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Cuál es un ejemplo de prevención de residuos?",
+      "explanation": "Contenedores y plantas gestionan residuos que ya existen. La prevención actúa antes, desde el diseño del producto.",
       "options": [
-        { "id": 34, "text": "La selva del Congo", "isCorrect": false },
-        { "id": 35, "text": "La Amazonía", "isCorrect": true },
-        { "id": 36, "text": "La selva de Daintree", "isCorrect": false }
+        {
+          "id": 34,
+          "text": "Llevar los residuos a una planta de recuperación",
+          "isCorrect": false
+        },
+        {
+          "id": 35,
+          "text": "Instalar más contenedores de reciclaje",
+          "isCorrect": false
+        },
+        {
+          "id": 36,
+          "text": "Diseñar productos duraderos y con menos materiales innecesarios",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 13, "categoryId": 5, "difficulty": "easy", "image": null,
-      "text": "¿Qué gas es el principal responsable del efecto invernadero causado por el ser humano?",
-      "explanation": "El dióxido de carbono se libera sobre todo al quemar combustibles fósiles como el carbón, el petróleo y el gas.",
+      "id": 13,
+      "categoryId": 1,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Cuál es el objetivo final de una buena gestión de residuos?",
+      "explanation": "No todo puede reciclarse. Una buena gestión combina prevención, recuperación y una disposición segura de lo que queda.",
       "options": [
-        { "id": 37, "text": "Oxígeno", "isCorrect": false },
-        { "id": 38, "text": "Dióxido de carbono", "isCorrect": true },
-        { "id": 39, "text": "Helio", "isCorrect": false }
+        {
+          "id": 37,
+          "text": "Prevenir y reducir residuos, recuperar materiales y disponer adecuadamente lo que no pueda aprovecharse",
+          "isCorrect": true
+        },
+        {
+          "id": 38,
+          "text": "Reciclar el 100 % de los residuos que se generan",
+          "isCorrect": false
+        },
+        {
+          "id": 39,
+          "text": "Llevar todos los residuos a un relleno sanitario controlado",
+          "isCorrect": false
+        }
       ]
     },
     {
-      "id": 14, "categoryId": 5, "difficulty": "medium", "image": null,
-      "text": "¿Cuál es el objetivo central del Acuerdo de París sobre el clima?",
-      "explanation": "Busca que el aumento de la temperatura global quede muy por debajo de 2 °C, procurando no superar 1,5 °C.",
+      "id": 14,
+      "categoryId": 2,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál es una buena razón para separar los residuos?",
+      "explanation": "Los materiales separados llegan más limpios y es más fácil recuperarlos.",
       "options": [
-        { "id": 40, "text": "Prohibir los autos a combustión", "isCorrect": false },
-        { "id": 41, "text": "Limitar el aumento de la temperatura global", "isCorrect": true },
-        { "id": 42, "text": "Plantar un árbol por habitante", "isCorrect": false }
+        {
+          "id": 40,
+          "text": "Que los residuos ocupen menos espacio en casa",
+          "isCorrect": false
+        },
+        {
+          "id": 41,
+          "text": "Que el camión recolector pase menos veces",
+          "isCorrect": false
+        },
+        {
+          "id": 42,
+          "text": "Facilitar su recuperación y reciclaje",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 15, "categoryId": 5, "difficulty": "hard", "image": null,
-      "text": "¿Qué gas de efecto invernadero, liberado en gran parte por la ganadería, calienta mucho más que el CO₂ por molécula?",
-      "explanation": "El metano retiene mucho más calor que el dióxido de carbono, aunque permanece menos tiempo en la atmósfera.",
+      "id": 15,
+      "categoryId": 2,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál de estos materiales puede reciclarse?",
+      "explanation": "El papel limpio y seco es uno de los materiales que más fácilmente se recuperan.",
       "options": [
-        { "id": 43, "text": "Metano", "isCorrect": true },
-        { "id": 44, "text": "Argón", "isCorrect": false },
-        { "id": 45, "text": "Hidrógeno", "isCorrect": false }
+        {
+          "id": 43,
+          "text": "Papel",
+          "isCorrect": true
+        },
+        {
+          "id": 44,
+          "text": "Restos de comida mezclados con basura",
+          "isCorrect": false
+        },
+        {
+          "id": 45,
+          "text": "Tierra contaminada",
+          "isCorrect": false
+        }
       ]
     },
     {
-      "id": 16, "categoryId": 6, "difficulty": "easy", "image": null,
-      "text": "¿Qué conviene llevar al supermercado?",
-      "explanation": "Una bolsa reutilizable reemplaza cientos de bolsas plásticas de un solo uso.",
+      "id": 16,
+      "categoryId": 2,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué ayuda a cuidar el medio ambiente?",
+      "explanation": "Separar permite recuperar materiales. Quemar plástico o tirar aceite al desagüe contamina el aire y el agua.",
       "options": [
-        { "id": 46, "text": "Una bolsa reutilizable", "isCorrect": true },
-        { "id": 47, "text": "Pedir bolsas plásticas nuevas", "isCorrect": false },
-        { "id": 48, "text": "Una bolsa nueva por cada producto", "isCorrect": false }
+        {
+          "id": 46,
+          "text": "Separar los residuos",
+          "isCorrect": true
+        },
+        {
+          "id": 47,
+          "text": "Tirar el aceite usado por la pileta",
+          "isCorrect": false
+        },
+        {
+          "id": 48,
+          "text": "Quemar el plástico en el patio",
+          "isCorrect": false
+        }
       ]
     },
     {
-      "id": 17, "categoryId": 6, "difficulty": "medium", "image": null,
-      "text": "¿Qué propone la economía circular?",
-      "explanation": "Reutilizar, reparar y reciclar para que los materiales sigan en uso en lugar de convertirse en basura.",
+      "id": 17,
+      "categoryId": 2,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué puede pasar con los residuos que terminan en ríos o arroyos?",
+      "explanation": "Los residuos en el agua no desaparecen: se trasladan y afectan a los seres vivos que dependen de ese ambiente.",
       "options": [
-        { "id": 49, "text": "Producir más rápido y más barato", "isCorrect": false },
-        { "id": 50, "text": "Mantener los materiales en uso el mayor tiempo posible", "isCorrect": true },
-        { "id": 51, "text": "Comprar solo productos importados", "isCorrect": false }
+        {
+          "id": 49,
+          "text": "El agua los degrada en pocos días",
+          "isCorrect": false
+        },
+        {
+          "id": 50,
+          "text": "La corriente se los lleva y dejan de ser un problema",
+          "isCorrect": false
+        },
+        {
+          "id": 51,
+          "text": "Pueden afectar los ecosistemas",
+          "isCorrect": true
+        }
       ]
     },
     {
-      "id": 18, "categoryId": 6, "difficulty": "hard", "image": null,
-      "text": "¿Qué mide la huella hídrica de un producto?",
-      "explanation": "Mide toda el agua dulce usada para producirlo, incluida la de las materias primas y la fabricación.",
+      "id": 18,
+      "categoryId": 2,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué significa «separación en origen»?",
+      "explanation": "Separar en origen es hacerlo en casa, la escuela o el trabajo, antes de que los residuos se mezclen.",
       "options": [
-        { "id": 52, "text": "El agua que contiene el producto", "isCorrect": false },
-        { "id": 53, "text": "El agua dulce usada en toda su producción", "isCorrect": true },
-        { "id": 54, "text": "El agua necesaria para reciclarlo", "isCorrect": false }
+        {
+          "id": 52,
+          "text": "Separar los productos según el país donde se fabricaron",
+          "isCorrect": false
+        },
+        {
+          "id": 53,
+          "text": "Separar los residuos en el lugar donde se generan",
+          "isCorrect": true
+        },
+        {
+          "id": 54,
+          "text": "Separar los residuos cuando llegan a la planta de reciclaje",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "categoryId": 2,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué ventaja tiene separar los materiales desde el origen?",
+      "explanation": "La planta sigue siendo necesaria, pero recibe materiales más limpios y fáciles de clasificar.",
+      "options": [
+        {
+          "id": 55,
+          "text": "Permite volver a mezclarlos después sin problema",
+          "isCorrect": false
+        },
+        {
+          "id": 56,
+          "text": "Hace innecesaria la planta de reciclaje",
+          "isCorrect": false
+        },
+        {
+          "id": 57,
+          "text": "Facilita su clasificación y aprovechamiento",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "categoryId": 2,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué pasa cuando los materiales reciclables se mezclan con residuos orgánicos?",
+      "explanation": "Los restos orgánicos ensucian los reciclables y les quitan calidad, o directamente impiden recuperarlos.",
+      "options": [
+        {
+          "id": 58,
+          "text": "Se convierten en compost junto con lo orgánico",
+          "isCorrect": false
+        },
+        {
+          "id": 59,
+          "text": "Se separan solos en la planta, sin problema",
+          "isCorrect": false
+        },
+        {
+          "id": 60,
+          "text": "Pueden ensuciarse y ser más difíciles de recuperar",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "categoryId": 2,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Por qué es importante identificar correctamente cada material?",
+      "explanation": "Cada material se recupera con un proceso distinto. Si se identifica mal, termina en el lugar equivocado.",
+      "options": [
+        {
+          "id": 61,
+          "text": "Para enviarlo al proceso de recuperación que le corresponde",
+          "isCorrect": true
+        },
+        {
+          "id": 62,
+          "text": "Para calcular cuánta basura genera cada hogar",
+          "isCorrect": false
+        },
+        {
+          "id": 63,
+          "text": "Para saber cuánto pesa cada residuo",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "categoryId": 2,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué puede pasar si un residuo peligroso se mezcla con los reciclables?",
+      "explanation": "Un residuo peligroso mezclado puede arruinar todo un lote de reciclables y poner en riesgo a quien lo manipula.",
+      "options": [
+        {
+          "id": 64,
+          "text": "Solo es un problema si el residuo peligroso es líquido",
+          "isCorrect": false
+        },
+        {
+          "id": 65,
+          "text": "Los reciclables neutralizan su peligrosidad",
+          "isCorrect": false
+        },
+        {
+          "id": 66,
+          "text": "Puede generar riesgos y contaminar los demás materiales",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "categoryId": 2,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Cuál es una buena práctica ambiental en una planta de reciclaje?",
+      "explanation": "Separar e identificar evita mezclas y contaminación, y hace más eficiente el trabajo en la planta.",
+      "options": [
+        {
+          "id": 67,
+          "text": "Juntar todo en una sola pila y clasificarlo al final del día",
+          "isCorrect": false
+        },
+        {
+          "id": 68,
+          "text": "Mantener los materiales separados y bien identificados",
+          "isCorrect": true
+        },
+        {
+          "id": 69,
+          "text": "Guardar los materiales al aire libre para que se ventilen",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "categoryId": 2,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué objetivo tiene la clasificación de materiales en una planta?",
+      "explanation": "Clasificar permite que cada material siga el camino de recuperación adecuado.",
+      "options": [
+        {
+          "id": 70,
+          "text": "Pesar los residuos para saber cuánto ingresó",
+          "isCorrect": false
+        },
+        {
+          "id": 71,
+          "text": "Separar los materiales según sus características y su destino de recuperación",
+          "isCorrect": true
+        },
+        {
+          "id": 72,
+          "text": "Reducir el volumen de los residuos",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "categoryId": 2,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Por qué los residuos deben almacenarse de manera ordenada?",
+      "explanation": "El orden evita mezclas, derrames y accidentes, y hace más simple el trabajo diario.",
+      "options": [
+        {
+          "id": 73,
+          "text": "Para evitar contaminación y riesgos, y facilitar su manejo",
+          "isCorrect": true
+        },
+        {
+          "id": 74,
+          "text": "Solo por una cuestión de prolijidad del lugar",
+          "isCorrect": false
+        },
+        {
+          "id": 75,
+          "text": "Para que entren más residuos en el mismo espacio",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "categoryId": 2,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Por qué la separación en origen mejora la calidad de los materiales reciclables?",
+      "explanation": "Si los materiales nunca se mezclan, no se ensucian entre sí. Aun así, la planta los vuelve a clasificar.",
+      "options": [
+        {
+          "id": 76,
+          "text": "Reduce la contaminación cruzada entre distintos residuos",
+          "isCorrect": true
+        },
+        {
+          "id": 77,
+          "text": "Porque los materiales separados en casa no necesitan clasificarse en la planta",
+          "isCorrect": false
+        },
+        {
+          "id": 78,
+          "text": "Porque aumenta la cantidad de residuos recolectados",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "categoryId": 2,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué es la contaminación cruzada de residuos?",
+      "explanation": "Por ejemplo, el aceite que mancha el cartón o los restos de comida que ensucian el papel.",
+      "options": [
+        {
+          "id": 79,
+          "text": "Cuando un residuo se traslada de una planta a otra",
+          "isCorrect": false
+        },
+        {
+          "id": 80,
+          "text": "Cuando un material contamina o afecta a otro durante su gestión",
+          "isCorrect": true
+        },
+        {
+          "id": 81,
+          "text": "Cuando se juntan materiales del mismo tipo que vienen de distintos lugares",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "categoryId": 2,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué es la trazabilidad de un residuo?",
+      "explanation": "La trazabilidad permite saber de dónde vino un residuo, por dónde pasó y dónde terminó.",
+      "options": [
+        {
+          "id": 82,
+          "text": "Clasificar un residuo según su material",
+          "isCorrect": false
+        },
+        {
+          "id": 83,
+          "text": "Poder seguir su recorrido desde que se genera hasta su destino final",
+          "isCorrect": true
+        },
+        {
+          "id": 84,
+          "text": "Medir cuántos residuos genera una empresa por mes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "categoryId": 2,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Por qué es importante la trazabilidad en la gestión de residuos?",
+      "explanation": "Sin trazabilidad no hay forma de comprobar que un residuo se trató como correspondía.",
+      "options": [
+        {
+          "id": 85,
+          "text": "Reemplaza la necesidad de separar los residuos",
+          "isCorrect": false
+        },
+        {
+          "id": 86,
+          "text": "Sirve sobre todo para calcular los costos de transporte",
+          "isCorrect": false
+        },
+        {
+          "id": 87,
+          "text": "Permite controlar que cada residuo reciba una gestión adecuada",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "categoryId": 2,
+      "difficulty": "hard",
+      "image": null,
+      "text": "Una empresa entrega cartón, plástico, vidrio y RAAEE mezclados. ¿Cuál sería la primera acción recomendable?",
+      "explanation": "Cada material tiene su propio circuito. Los RAAEE, además, necesitan un manejo especial.",
+      "options": [
+        {
+          "id": 88,
+          "text": "Rechazar la entrega completa",
+          "isCorrect": false
+        },
+        {
+          "id": 89,
+          "text": "Clasificar los materiales según su tipo y su procedimiento de gestión",
+          "isCorrect": true
+        },
+        {
+          "id": 90,
+          "text": "Mandar todo junto a reciclaje para no perder tiempo",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "categoryId": 2,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Cuál es una señal de buena gestión ambiental en una planta?",
+      "explanation": "La rapidez o el volumen no indican una buena gestión. Lo que importa es cómo se maneja cada material.",
+      "options": [
+        {
+          "id": 91,
+          "text": "Que toda la carga se procese el mismo día en que llega",
+          "isCorrect": false
+        },
+        {
+          "id": 92,
+          "text": "Que haya un gran volumen de material acumulado en el predio",
+          "isCorrect": false
+        },
+        {
+          "id": 93,
+          "text": "Separación, orden, almacenamiento adecuado y trazabilidad",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "categoryId": 3,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué palabra describe mejor el aprovechamiento de materiales que provienen de residuos?",
+      "explanation": "Recuperar es volver a aprovechar un material. La disposición final es para lo que ya no puede aprovecharse.",
+      "options": [
+        {
+          "id": 94,
+          "text": "Recuperación",
+          "isCorrect": true
+        },
+        {
+          "id": 95,
+          "text": "Compactación",
+          "isCorrect": false
+        },
+        {
+          "id": 96,
+          "text": "Disposición final",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "categoryId": 3,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué busca la economía circular?",
+      "explanation": "En vez de «usar y tirar», la economía circular busca que los materiales sigan circulando.",
+      "options": [
+        {
+          "id": 97,
+          "text": "Mantener productos y materiales en uso el mayor tiempo posible",
+          "isCorrect": true
+        },
+        {
+          "id": 98,
+          "text": "Que todos los residuos terminen en un mismo lugar",
+          "isCorrect": false
+        },
+        {
+          "id": 99,
+          "text": "Que los productos se reemplacen seguido por modelos nuevos",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "categoryId": 3,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál de estas situaciones representa mejor una economía circular?",
+      "explanation": "«Extraer, fabricar, usar y tirar» es justamente el modelo lineal que la economía circular busca cambiar.",
+      "options": [
+        {
+          "id": 100,
+          "text": "Enterrar los residuos en un relleno controlado",
+          "isCorrect": false
+        },
+        {
+          "id": 101,
+          "text": "Extraer recursos, fabricar, usar y tirar",
+          "isCorrect": false
+        },
+        {
+          "id": 102,
+          "text": "Recuperar un material y usarlo para fabricar productos nuevos",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "categoryId": 3,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Por qué una planta de reciclaje contribuye a la economía circular?",
+      "explanation": "La planta convierte residuos en materiales que la industria vuelve a usar.",
+      "options": [
+        {
+          "id": 103,
+          "text": "Porque reduce la cantidad de productos que se fabrican",
+          "isCorrect": false
+        },
+        {
+          "id": 104,
+          "text": "Porque recupera materiales que vuelven a las cadenas productivas",
+          "isCorrect": true
+        },
+        {
+          "id": 105,
+          "text": "Porque hace desaparecer los residuos",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "categoryId": 3,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué es la valorización de residuos?",
+      "explanation": "Valorizar no es ponerle precio: es darle un nuevo aprovechamiento a algo que se descartó.",
+      "options": [
+        {
+          "id": 106,
+          "text": "Aprovechar un residuo mediante la recuperación de materiales u otras alternativas autorizadas",
+          "isCorrect": true
+        },
+        {
+          "id": 107,
+          "text": "Ponerle un precio de venta a cada residuo",
+          "isCorrect": false
+        },
+        {
+          "id": 108,
+          "text": "Clasificar los residuos según su peligrosidad",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "categoryId": 3,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Cuál es uno de los principales objetivos de la economía circular?",
+      "explanation": "El objetivo es aprovechar al máximo los recursos que ya se extrajeron, en lugar de descartarlos.",
+      "options": [
+        {
+          "id": 109,
+          "text": "Producir más rápido para abaratar costos",
+          "isCorrect": false
+        },
+        {
+          "id": 110,
+          "text": "Mantener los recursos en circulación y reducir la generación de residuos",
+          "isCorrect": true
+        },
+        {
+          "id": 111,
+          "text": "Reemplazar todos los materiales por plásticos biodegradables",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "categoryId": 3,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué significa «materia prima secundaria»?",
+      "explanation": "Es «secundaria» porque no se extrae de la naturaleza: proviene de algo que ya fue usado.",
+      "options": [
+        {
+          "id": 112,
+          "text": "Un material virgen que complementa a la materia prima principal",
+          "isCorrect": false
+        },
+        {
+          "id": 113,
+          "text": "Material recuperado de residuos que vuelve a usarse como recurso",
+          "isCorrect": true
+        },
+        {
+          "id": 114,
+          "text": "Un residuo que no puede reciclarse",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "categoryId": 3,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué relación hay entre el reciclaje y la extracción de recursos naturales?",
+      "explanation": "Cada material recuperado puede reemplazar una parte de lo que habría que extraer de la naturaleza.",
+      "options": [
+        {
+          "id": 115,
+          "text": "No tienen relación: son etapas independientes",
+          "isCorrect": false
+        },
+        {
+          "id": 116,
+          "text": "El reciclaje puede disminuir la necesidad de usar materias primas vírgenes",
+          "isCorrect": true
+        },
+        {
+          "id": 117,
+          "text": "El reciclaje necesita extraer más recursos para funcionar",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "categoryId": 3,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué significa «ciclo de vida» de un producto?",
+      "explanation": "El ciclo de vida abarca todo: de dónde salen los materiales, cómo se usa el producto y qué pasa cuando se descarta.",
+      "options": [
+        {
+          "id": 118,
+          "text": "Las etapas desde que se fabrica hasta que se vende",
+          "isCorrect": false
+        },
+        {
+          "id": 119,
+          "text": "El tiempo que el producto funciona sin romperse",
+          "isCorrect": false
+        },
+        {
+          "id": 120,
+          "text": "Las etapas desde la extracción de recursos hasta su uso y su gestión al final de su vida útil",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "categoryId": 3,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Por qué es importante analizar el ciclo de vida de un producto?",
+      "explanation": "Analizarlo muestra en qué etapa se genera más impacto y dónde conviene mejorar.",
+      "options": [
+        {
+          "id": 121,
+          "text": "Permite identificar sus impactos ambientales en cada etapa",
+          "isCorrect": true
+        },
+        {
+          "id": 122,
+          "text": "Sirve principalmente para fijar su precio de venta",
+          "isCorrect": false
+        },
+        {
+          "id": 123,
+          "text": "Permite calcular su fecha de vencimiento",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "categoryId": 3,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué puede afectar el valor de un material reciclable?",
+      "explanation": "Un mismo material vale distinto según su estado: limpio y bien separado vale más que sucio o mezclado.",
+      "options": [
+        {
+          "id": 124,
+          "text": "Solamente su peso",
+          "isCorrect": false
+        },
+        {
+          "id": 125,
+          "text": "Su calidad, limpieza, composición y demanda",
+          "isCorrect": true
+        },
+        {
+          "id": 126,
+          "text": "Solamente el tipo de material, sin importar su estado",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "categoryId": 3,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué es la valorización energética?",
+      "explanation": "Es obtener energía de determinados residuos, en instalaciones autorizadas y con controles.",
+      "options": [
+        {
+          "id": 127,
+          "text": "Aprovechar la energía contenida en ciertos residuos mediante procesos autorizados",
+          "isCorrect": true
+        },
+        {
+          "id": 128,
+          "text": "Ahorrar energía separando los residuos en casa",
+          "isCorrect": false
+        },
+        {
+          "id": 129,
+          "text": "Usar energía renovable en las plantas de reciclaje",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "categoryId": 3,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué debería priorizarse antes de considerar la valorización energética?",
+      "explanation": "Aprovechar la energía de un residuo es una opción posterior: antes conviene evitarlo, reutilizarlo o recuperar sus materiales.",
+      "options": [
+        {
+          "id": 130,
+          "text": "Asegurarse de que los residuos estén secos para que se quemen mejor",
+          "isCorrect": false
+        },
+        {
+          "id": 131,
+          "text": "Juntar el mayor volumen posible de residuos",
+          "isCorrect": false
+        },
+        {
+          "id": 132,
+          "text": "Prevenir, reducir, reutilizar y recuperar materiales cuando sea posible",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "categoryId": 4,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál de estos objetos es de papel?",
+      "explanation": "El telgopor y el sachet son plásticos, aunque a veces se confundan con materiales livianos como el papel.",
+      "options": [
+        {
+          "id": 133,
+          "text": "Un sachet de leche",
+          "isCorrect": false
+        },
+        {
+          "id": 134,
+          "text": "Una bandeja de telgopor",
+          "isCorrect": false
+        },
+        {
+          "id": 135,
+          "text": "Una hoja de cuaderno",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "categoryId": 4,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál es un ejemplo de cartón?",
+      "explanation": "Las cajas de embalaje son de cartón, uno de los materiales que más se recuperan.",
+      "options": [
+        {
+          "id": 136,
+          "text": "Una caja de embalaje",
+          "isCorrect": true
+        },
+        {
+          "id": 137,
+          "text": "Un frasco de vidrio",
+          "isCorrect": false
+        },
+        {
+          "id": 138,
+          "text": "Un vaso de telgopor",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "categoryId": 4,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cómo conviene entregar el papel para reciclar?",
+      "explanation": "La humedad y la suciedad deterioran el papel y dificultan su recuperación.",
+      "options": [
+        {
+          "id": 139,
+          "text": "Húmedo, para que se compacte mejor",
+          "isCorrect": false
+        },
+        {
+          "id": 140,
+          "text": "Mezclado con el resto de la basura",
+          "isCorrect": false
+        },
+        {
+          "id": 141,
+          "text": "Limpio y seco",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "categoryId": 4,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué puede contaminar el papel destinado al reciclaje?",
+      "explanation": "Doblado o escrito no es problema. La grasa y la comida sí lo arruinan para reciclar.",
+      "options": [
+        {
+          "id": 142,
+          "text": "Aceite y restos de comida",
+          "isCorrect": true
+        },
+        {
+          "id": 143,
+          "text": "Que esté doblado",
+          "isCorrect": false
+        },
+        {
+          "id": 144,
+          "text": "Que esté escrito con lapicera",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "categoryId": 4,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué material se recupera al reciclar cartón?",
+      "explanation": "El cartón está hecho de fibras de papel, que se separan y se usan para fabricar papel o cartón nuevo.",
+      "options": [
+        {
+          "id": 145,
+          "text": "Aserrín de madera",
+          "isCorrect": false
+        },
+        {
+          "id": 146,
+          "text": "Resina plástica",
+          "isCorrect": false
+        },
+        {
+          "id": 147,
+          "text": "Fibra de papel",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "categoryId": 4,
+      "difficulty": "medium",
+      "image": null,
+      "text": "Una caja de cartón está llena de restos de comida. ¿Qué problema presenta?",
+      "explanation": "Los restos de comida ensucian el cartón y pueden contaminar el resto del lote.",
+      "options": [
+        {
+          "id": 148,
+          "text": "Puede contaminar el material recuperable",
+          "isCorrect": true
+        },
+        {
+          "id": 149,
+          "text": "Ninguno, porque el cartón es biodegradable",
+          "isCorrect": false
+        },
+        {
+          "id": 150,
+          "text": "Ninguno: la comida se elimina cuando se lava el cartón",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "categoryId": 4,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Por qué es importante mantener secos el papel y el cartón?",
+      "explanation": "Las fibras son lo que se recupera del papel. Si se dañan con la humedad, el material pierde calidad.",
+      "options": [
+        {
+          "id": 151,
+          "text": "Solo para evitar que tengan olor",
+          "isCorrect": false
+        },
+        {
+          "id": 152,
+          "text": "Porque al mojarse se vuelven tóxicos",
+          "isCorrect": false
+        },
+        {
+          "id": 153,
+          "text": "Porque la humedad deteriora las fibras y dificulta su recuperación",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "categoryId": 4,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Cuál es un ejemplo de contaminación de un material reciclable?",
+      "explanation": "La tinta y los dobleces no impiden reciclar. El aceite impregna las fibras y las contamina.",
+      "options": [
+        {
+          "id": 154,
+          "text": "Papel impreso con tinta",
+          "isCorrect": false
+        },
+        {
+          "id": 155,
+          "text": "Cartón doblado",
+          "isCorrect": false
+        },
+        {
+          "id": 156,
+          "text": "Papel impregnado con aceite",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "categoryId": 4,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué factores pueden afectar la calidad del papel recuperado?",
+      "explanation": "El tamaño y el texto no importan: lo que baja la calidad es que esté mojado o sucio.",
+      "options": [
+        {
+          "id": 157,
+          "text": "La humedad y la contaminación",
+          "isCorrect": true
+        },
+        {
+          "id": 158,
+          "text": "Que tenga texto escrito",
+          "isCorrect": false
+        },
+        {
+          "id": 159,
+          "text": "Que las hojas sean de distintos tamaños",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "categoryId": 4,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué problema genera la humedad en grandes cantidades de papel y cartón?",
+      "explanation": "En grandes volúmenes, la humedad daña las fibras, encarece el transporte y complica el procesamiento.",
+      "options": [
+        {
+          "id": 160,
+          "text": "Deterioro de las fibras, más peso y dificultades para procesarlo",
+          "isCorrect": true
+        },
+        {
+          "id": 161,
+          "text": "Ninguno: se compacta mejor y ocupa menos lugar",
+          "isCorrect": false
+        },
+        {
+          "id": 162,
+          "text": "Solo aumenta el peso, sin afectar la calidad",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "categoryId": 4,
+      "difficulty": "hard",
+      "image": null,
+      "text": "Una caja de cartón tiene aceite derramado. ¿Qué problema hay?",
+      "explanation": "El aceite no se evapora ni se separa fácilmente: queda impregnado en las fibras.",
+      "options": [
+        {
+          "id": 163,
+          "text": "El aceite puede contaminar el cartón y afectar su recuperación",
+          "isCorrect": true
+        },
+        {
+          "id": 164,
+          "text": "Ninguno, si se la deja secar al sol",
+          "isCorrect": false
+        },
+        {
+          "id": 165,
+          "text": "Ninguno, porque el aceite se separa al triturar el cartón",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "categoryId": 4,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué ocurre si un lote de papel reciclable trae muchos residuos húmedos?",
+      "explanation": "Aunque en el reciclaje se use agua, los residuos húmedos traen suciedad y deterioran las fibras antes de tiempo.",
+      "options": [
+        {
+          "id": 166,
+          "text": "No afecta, porque igual el papel se mezcla con agua al reciclarse",
+          "isCorrect": false
+        },
+        {
+          "id": 167,
+          "text": "Puede bajar la calidad del material recuperado",
+          "isCorrect": true
+        },
+        {
+          "id": 168,
+          "text": "Mejora el proceso, porque ayuda a deshacer el papel",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "categoryId": 5,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál de estos objetos normalmente es de plástico?",
+      "explanation": "Las botellas PET, como las de gaseosa o agua, son de plástico.",
+      "options": [
+        {
+          "id": 169,
+          "text": "Un frasco de mermelada",
+          "isCorrect": false
+        },
+        {
+          "id": 170,
+          "text": "Un diario",
+          "isCorrect": false
+        },
+        {
+          "id": 171,
+          "text": "Una botella PET",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "categoryId": 5,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué deberíamos evitar hacer con una botella plástica reciclable?",
+      "explanation": "Una botella tirada al ambiente tarda muchísimo en degradarse y se pierde un material que podía recuperarse.",
+      "options": [
+        {
+          "id": 172,
+          "text": "Separarla del resto de la basura",
+          "isCorrect": false
+        },
+        {
+          "id": 173,
+          "text": "Llevarla a un punto de reciclaje",
+          "isCorrect": false
+        },
+        {
+          "id": 174,
+          "text": "Tirarla al ambiente",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "categoryId": 5,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál de estos objetos es de vidrio?",
+      "explanation": "Los frascos de conservas y mermeladas suelen ser de vidrio, uno de los materiales que pueden recuperarse.",
+      "options": [
+        {
+          "id": 175,
+          "text": "Un envase de cartón de leche",
+          "isCorrect": false
+        },
+        {
+          "id": 176,
+          "text": "Una botella PET",
+          "isCorrect": false
+        },
+        {
+          "id": 177,
+          "text": "Un frasco de mermelada",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "categoryId": 5,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué hay que tener en cuenta al manipular vidrio?",
+      "explanation": "El vidrio roto corta. Por eso se manipula con cuidado y, en la planta, con guantes.",
+      "options": [
+        {
+          "id": 178,
+          "text": "Que se degrada rápido con el sol",
+          "isCorrect": false
+        },
+        {
+          "id": 179,
+          "text": "El riesgo de cortes",
+          "isCorrect": true
+        },
+        {
+          "id": 180,
+          "text": "Que se desarma si se moja",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "categoryId": 5,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Dónde conviene llevar el vidrio para que se recupere?",
+      "explanation": "En los puntos de recepción el vidrio se junta separado y en condiciones de ser recuperado.",
+      "options": [
+        {
+          "id": 181,
+          "text": "A un punto de recepción adecuado",
+          "isCorrect": true
+        },
+        {
+          "id": 182,
+          "text": "Al contenedor de residuos comunes",
+          "isCorrect": false
+        },
+        {
+          "id": 183,
+          "text": "A la vereda, junto con la bolsa de basura",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "categoryId": 5,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿El plástico puede reciclarse?",
+      "explanation": "Hay muchos tipos de plástico y no todos se reciclan igual ni en todos lados.",
+      "options": [
+        {
+          "id": 184,
+          "text": "Sí, todos los plásticos se reciclan de la misma forma",
+          "isCorrect": false
+        },
+        {
+          "id": 185,
+          "text": "Sí, según el tipo de plástico y las condiciones de recuperación",
+          "isCorrect": true
+        },
+        {
+          "id": 186,
+          "text": "No, el plástico no puede reciclarse",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "categoryId": 5,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué es el PET?",
+      "explanation": "El PET es un plástico muy usado en botellas de bebidas. No es biodegradable, por eso conviene recuperarlo.",
+      "options": [
+        {
+          "id": 187,
+          "text": "Un tipo de plástico que se usa, entre otras cosas, en botellas",
+          "isCorrect": true
+        },
+        {
+          "id": 188,
+          "text": "Un tipo de vidrio liviano para envases",
+          "isCorrect": false
+        },
+        {
+          "id": 189,
+          "text": "Un tipo de plástico biodegradable",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "categoryId": 5,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿El vidrio puede reciclarse más de una vez?",
+      "explanation": "El vidrio se funde y se vuelve a moldear, y ese proceso puede repetirse muchas veces.",
+      "options": [
+        {
+          "id": 190,
+          "text": "Sí, puede reciclarse muchas veces",
+          "isCorrect": true
+        },
+        {
+          "id": 191,
+          "text": "No, solo puede reciclarse una vez",
+          "isCorrect": false
+        },
+        {
+          "id": 192,
+          "text": "No, el vidrio no se recicla",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "categoryId": 5,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué conviene hacer con una botella plástica antes de entregarla para reciclar?",
+      "explanation": "Una botella con restos ensucia el material. Cada sistema indica cómo prepararla, por ejemplo si se aplasta o se tapa.",
+      "options": [
+        {
+          "id": 193,
+          "text": "Vaciarla y acondicionarla según indique el sistema de reciclaje",
+          "isCorrect": true
+        },
+        {
+          "id": 194,
+          "text": "Entregarla con su contenido, que se separa en la planta",
+          "isCorrect": false
+        },
+        {
+          "id": 195,
+          "text": "Cortarla en pedazos chicos",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "categoryId": 5,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué material requiere especial atención por el riesgo de corte?",
+      "explanation": "El vidrio roto tiene bordes filosos y puede causar cortes al manipularlo.",
+      "options": [
+        {
+          "id": 196,
+          "text": "Cartón corrugado",
+          "isCorrect": false
+        },
+        {
+          "id": 197,
+          "text": "Vidrio",
+          "isCorrect": true
+        },
+        {
+          "id": 198,
+          "text": "Plástico flexible",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "categoryId": 5,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Por qué es importante recuperar los plásticos?",
+      "explanation": "La mayoría de los plásticos no son biodegradables. Recuperarlos reduce su impacto, aunque no lo elimina.",
+      "options": [
+        {
+          "id": 199,
+          "text": "Porque la mayoría de los plásticos son biodegradables y conviene compostarlos",
+          "isCorrect": false
+        },
+        {
+          "id": 200,
+          "text": "Para aprovechar materiales y reducir residuos",
+          "isCorrect": true
+        },
+        {
+          "id": 201,
+          "text": "Porque recuperarlos elimina por completo su impacto ambiental",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "categoryId": 5,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué puede fabricarse con vidrio reciclado?",
+      "explanation": "Con vidrio recuperado se fabrican nuevos envases de vidrio.",
+      "options": [
+        {
+          "id": 202,
+          "text": "Nuevos envases de vidrio",
+          "isCorrect": true
+        },
+        {
+          "id": 203,
+          "text": "Solo objetos decorativos, porque pierde transparencia",
+          "isCorrect": false
+        },
+        {
+          "id": 204,
+          "text": "Solo materiales de construcción, nunca envases",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "categoryId": 5,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué debería hacerse con un envase de vidrio roto?",
+      "explanation": "Roto o entero, el vidrio puede recuperarse. Lo importante es manipularlo con cuidado y seguir las indicaciones del lugar.",
+      "options": [
+        {
+          "id": 205,
+          "text": "Manipularlo con precaución y gestionarlo según las indicaciones del punto de recepción",
+          "isCorrect": true
+        },
+        {
+          "id": 206,
+          "text": "Tirarlo con los residuos comunes, porque roto ya no se recicla",
+          "isCorrect": false
+        },
+        {
+          "id": 207,
+          "text": "Mezclarlo con el plástico para que no se pierda",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "categoryId": 5,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Cuál es un ejemplo de valorización material?",
+      "explanation": "Valorización material es recuperar el material en sí. Obtener energía del residuo es valorización energética, que es otra cosa.",
+      "options": [
+        {
+          "id": 208,
+          "text": "Enterrar plástico en un relleno controlado",
+          "isCorrect": false
+        },
+        {
+          "id": 209,
+          "text": "Quemar plástico para generar energía",
+          "isCorrect": false
+        },
+        {
+          "id": 210,
+          "text": "Recuperar plástico para fabricar nuevos productos",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "categoryId": 5,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Por qué no se debe quemar plástico de manera informal?",
+      "explanation": "Al quemarse sin control, el plástico libera humo y sustancias que contaminan el aire y afectan la salud.",
+      "options": [
+        {
+          "id": 211,
+          "text": "Porque se pierde un material valioso, aunque no contamina",
+          "isCorrect": false
+        },
+        {
+          "id": 212,
+          "text": "Puede liberar emisiones contaminantes y generar riesgos para la salud y el ambiente",
+          "isCorrect": true
+        },
+        {
+          "id": 213,
+          "text": "Solo porque está prohibido, aunque no sea dañino",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "categoryId": 6,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Qué es el aceite vegetal usado?",
+      "explanation": "Es el aceite de cocina que queda después de freír o cocinar. El aceite de motor es otro residuo, con otro tratamiento.",
+      "options": [
+        {
+          "id": 214,
+          "text": "La grasa que queda en la carne",
+          "isCorrect": false
+        },
+        {
+          "id": 215,
+          "text": "Aceite que ya se usó para cocinar",
+          "isCorrect": true
+        },
+        {
+          "id": 216,
+          "text": "Aceite de motor usado",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "categoryId": 6,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Dónde NO hay que tirar el aceite usado?",
+      "explanation": "Por el desagüe el aceite llega al agua y la contamina. Lo correcto es guardarlo y llevarlo a un punto de recepción.",
+      "options": [
+        {
+          "id": 217,
+          "text": "En el desagüe",
+          "isCorrect": true
+        },
+        {
+          "id": 218,
+          "text": "En un recipiente cerrado",
+          "isCorrect": false
+        },
+        {
+          "id": 219,
+          "text": "En un punto de recepción",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "categoryId": 6,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿El aceite vegetal usado puede recuperarse?",
+      "explanation": "El aceite usado se puede recuperar y valorizar si se junta por separado.",
+      "options": [
+        {
+          "id": 220,
+          "text": "No, una vez usado ya no tiene utilidad",
+          "isCorrect": false
+        },
+        {
+          "id": 221,
+          "text": "Sí",
+          "isCorrect": true
+        },
+        {
+          "id": 222,
+          "text": "Solo si se mezcla con agua",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "categoryId": 6,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Por qué no hay que tirar aceite al agua?",
+      "explanation": "El aceite contamina el agua. Además, el aceite usado no debe reutilizarse para cocinar indefinidamente.",
+      "options": [
+        {
+          "id": 223,
+          "text": "Porque tapa las cañerías, aunque no contamina",
+          "isCorrect": false
+        },
+        {
+          "id": 224,
+          "text": "Porque puede contaminarla",
+          "isCorrect": true
+        },
+        {
+          "id": 225,
+          "text": "Porque se desperdicia aceite que podría volver a usarse para cocinar",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "categoryId": 6,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál de estos es un RAAEE?",
+      "explanation": "Los RAAEE son aparatos eléctricos o electrónicos que se descartan, como celulares, computadoras o monitores.",
+      "options": [
+        {
+          "id": 226,
+          "text": "Un teléfono celular en desuso",
+          "isCorrect": true
+        },
+        {
+          "id": 227,
+          "text": "Una lata de aluminio",
+          "isCorrect": false
+        },
+        {
+          "id": 228,
+          "text": "Una caja de cartón",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "categoryId": 6,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Una computadora vieja puede considerarse RAAEE?",
+      "explanation": "Cualquier aparato eléctrico o electrónico que se descarta es un RAAEE, funcione o no.",
+      "options": [
+        {
+          "id": 229,
+          "text": "No, solo los celulares son RAAEE",
+          "isCorrect": false
+        },
+        {
+          "id": 230,
+          "text": "Sí",
+          "isCorrect": true
+        },
+        {
+          "id": 231,
+          "text": "Solo si todavía funciona",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "categoryId": 6,
+      "difficulty": "easy",
+      "image": null,
+      "text": "¿Cuál de estos puede ser un RAAEE?",
+      "explanation": "Un monitor es un aparato electrónico. Cuando se descarta, se convierte en RAAEE.",
+      "options": [
+        {
+          "id": 232,
+          "text": "Una botella de vidrio",
+          "isCorrect": false
+        },
+        {
+          "id": 233,
+          "text": "Un diario",
+          "isCorrect": false
+        },
+        {
+          "id": 234,
+          "text": "Un monitor",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "categoryId": 6,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Cómo conviene guardar el aceite usado hasta entregarlo?",
+      "explanation": "Un recipiente cerrado evita derrames durante el almacenamiento y el traslado.",
+      "options": [
+        {
+          "id": 235,
+          "text": "En un frasco abierto, para que se enfríe",
+          "isCorrect": false
+        },
+        {
+          "id": 236,
+          "text": "En una bolsa de residuos",
+          "isCorrect": false
+        },
+        {
+          "id": 237,
+          "text": "En un recipiente cerrado y adecuado",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "categoryId": 6,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué significa RAAEE?",
+      "explanation": "Son los aparatos eléctricos y electrónicos que se descartan, desde un celular hasta una heladera.",
+      "options": [
+        {
+          "id": 238,
+          "text": "Residuos de Aparatos Eléctricos y Electrónicos",
+          "isCorrect": true
+        },
+        {
+          "id": 239,
+          "text": "Recuperación Avanzada de Aceites y Envases Especiales",
+          "isCorrect": false
+        },
+        {
+          "id": 240,
+          "text": "Residuos Agrícolas y Ambientales Especiales",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "categoryId": 6,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué beneficio tiene recuperar el aceite vegetal usado?",
+      "explanation": "Recuperarlo evita que contamine y le da un nuevo aprovechamiento, pero no para volver a cocinar.",
+      "options": [
+        {
+          "id": 241,
+          "text": "Hace innecesario separar los demás residuos",
+          "isCorrect": false
+        },
+        {
+          "id": 242,
+          "text": "Evita que termine en lugares inadecuados y permite valorizarlo",
+          "isCorrect": true
+        },
+        {
+          "id": 243,
+          "text": "Permite volver a usarlo para cocinar después de filtrarlo",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "categoryId": 6,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Por qué no hay que mezclar el aceite usado con los residuos comunes?",
+      "explanation": "El aceite impregna lo que toca y arruina materiales que podrían haberse recuperado.",
+      "options": [
+        {
+          "id": 244,
+          "text": "Porque atrae insectos, aunque no contamina",
+          "isCorrect": false
+        },
+        {
+          "id": 245,
+          "text": "Porque se solidifica y ocupa mucho lugar",
+          "isCorrect": false
+        },
+        {
+          "id": 246,
+          "text": "Puede contaminar otros materiales y dificultar su gestión",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "categoryId": 6,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Qué puede recuperarse de muchos aparatos electrónicos?",
+      "explanation": "Los aparatos electrónicos tienen metales y otros componentes que pueden recuperarse si se gestionan bien.",
+      "options": [
+        {
+          "id": 247,
+          "text": "Nada, porque sus materiales están contaminados",
+          "isCorrect": false
+        },
+        {
+          "id": 248,
+          "text": "Metales y otros componentes",
+          "isCorrect": true
+        },
+        {
+          "id": 249,
+          "text": "Solo el plástico de la carcasa",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "categoryId": 6,
+      "difficulty": "medium",
+      "image": null,
+      "text": "¿Cuál de estas es una mala práctica ambiental?",
+      "explanation": "El aceite en el suelo contamina la tierra y puede llegar al agua.",
+      "options": [
+        {
+          "id": 250,
+          "text": "Guardar el aceite usado en una botella cerrada",
+          "isCorrect": false
+        },
+        {
+          "id": 251,
+          "text": "Llevar un celular viejo a un punto de recepción",
+          "isCorrect": false
+        },
+        {
+          "id": 252,
+          "text": "Tirar aceite usado al suelo",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "categoryId": 6,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Por qué hay que gestionar correctamente los RAAEE?",
+      "explanation": "Los RAAEE tienen materiales valiosos y también componentes que, mal manejados, pueden ser peligrosos.",
+      "options": [
+        {
+          "id": 253,
+          "text": "Solo porque ocupan mucho espacio en los rellenos",
+          "isCorrect": false
+        },
+        {
+          "id": 254,
+          "text": "Porque tienen materiales aprovechables y componentes que requieren un manejo adecuado",
+          "isCorrect": true
+        },
+        {
+          "id": 255,
+          "text": "Porque sus metales son tóxicos y no pueden recuperarse",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "categoryId": 6,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Por qué los RAAEE necesitan una gestión diferenciada del resto de los residuos?",
+      "explanation": "Un aparato combina muchos materiales distintos, y algunos componentes necesitan un tratamiento especial.",
+      "options": [
+        {
+          "id": 256,
+          "text": "Porque están hechos de un solo material difícil de separar",
+          "isCorrect": false
+        },
+        {
+          "id": 257,
+          "text": "Porque se reciclan igual que el papel, pero en otra planta",
+          "isCorrect": false
+        },
+        {
+          "id": 258,
+          "text": "Porque contienen materiales recuperables y componentes que pueden requerir manejo especializado",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "categoryId": 6,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué recursos pueden recuperarse de algunos RAAEE?",
+      "explanation": "Un aparato electrónico combina muchos materiales, y varios de ellos pueden recuperarse.",
+      "options": [
+        {
+          "id": 259,
+          "text": "Solo metales preciosos, como el oro",
+          "isCorrect": false
+        },
+        {
+          "id": 260,
+          "text": "Solo plástico, porque los metales se pierden en el proceso",
+          "isCorrect": false
+        },
+        {
+          "id": 261,
+          "text": "Metales, plásticos, vidrio y otros componentes",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "categoryId": 6,
+      "difficulty": "hard",
+      "image": null,
+      "text": "¿Qué riesgo tiene desarmar aparatos electrónicos sin los procedimientos adecuados?",
+      "explanation": "Aun desenchufados, algunos aparatos tienen componentes peligrosos o partes que pueden cortar.",
+      "options": [
+        {
+          "id": 262,
+          "text": "Solo que el aparato deje de funcionar",
+          "isCorrect": false
+        },
+        {
+          "id": 263,
+          "text": "Ninguno, si el aparato está desenchufado",
+          "isCorrect": false
+        },
+        {
+          "id": 264,
+          "text": "Exposición a componentes peligrosos, cortes u otros riesgos",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "categoryId": 6,
+      "difficulty": "hard",
+      "image": null,
+      "text": "Aparece una computadora vieja entre los residuos comunes. ¿Qué sería lo más adecuado?",
+      "explanation": "Una computadora es un RAAEE completo: no se desarma por partes ni se clasifica solo por su carcasa.",
+      "options": [
+        {
+          "id": 265,
+          "text": "Sacarle las piezas de valor y tirar el resto con la basura común",
+          "isCorrect": false
+        },
+        {
+          "id": 266,
+          "text": "Separarla y gestionarla como RAAEE según el procedimiento correspondiente",
+          "isCorrect": true
+        },
+        {
+          "id": 267,
+          "text": "Ponerla con los plásticos, porque su carcasa es de plástico",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "categoryId": 6,
+      "difficulty": "hard",
+      "image": null,
+      "text": "Una botella con aceite usado tiene una pequeña pérdida. ¿Qué debería hacerse?",
+      "explanation": "Una pérdida chica puede contaminar otros materiales y superficies. Hay que asegurar el envase antes de moverlo.",
+      "options": [
+        {
+          "id": 268,
+          "text": "Asegurar el recipiente y evitar derrames durante el almacenamiento y el transporte",
+          "isCorrect": true
+        },
+        {
+          "id": 269,
+          "text": "Tirarla con los residuos comunes, porque ya no sirve",
+          "isCorrect": false
+        },
+        {
+          "id": 270,
+          "text": "Entregarla igual: una pérdida chica no es un problema",
+          "isCorrect": false
+        }
       ]
     }
   ]
